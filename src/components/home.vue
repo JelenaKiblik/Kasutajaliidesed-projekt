@@ -1,11 +1,8 @@
 <template>
   <div class="home">
     <h1>{{title}}</h1>
-    <div class="row">
-      <div class="col-md-4 col-lg4" v-for="(data,index) in products" :key="index">
-        <img :src="data.image" class="img-fluid">
-         <h3 @click="goTodetail(data.productId)" >{{data.productTitle}}</h3>
-      </div>
+    <div>
+        <img :src="image" class="img-fluid">
     </div>
   </div>
 </template>
@@ -15,14 +12,9 @@ export default {
   name: 'home',
   data () {
     return {
-      title: ''
+      title: '',
+      image: require('../assets/images/mugs.jpg'),
     }
-  },
-  methods:{
-  goTodetail(prodId) {
-    let proId=prodId
-    this.$router.push({name:'details',params:{Pid:proId}})
-  }
   }
 }
 </script>
